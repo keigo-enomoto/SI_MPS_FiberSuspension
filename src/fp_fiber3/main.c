@@ -21,7 +21,7 @@ F^v = - [ \nu \nabla^2 u_m ]_f (m:fluid, f:fiber)
 
 In this code, we can simulate couette flow
 
-In this file, the fiber must be the array of fluid paticles( n_solid = n_fiber * aspect_ratio )
+In this file, the fiber must be the array of fluid particles( n_solid = n_fiber * aspect_ratio )
 
 output :
 - input_parameters
