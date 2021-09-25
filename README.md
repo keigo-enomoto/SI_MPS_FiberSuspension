@@ -4,12 +4,16 @@ This is the code used in my [graduate thesis](http://rheology.jp/nagoya/employee
 Watch the movie on [YouTube](https://www.youtube.com/watch?v=f9K-1ByvgVI)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 I have'nt make sure this works on Windows.
 On Linux or Mac, maybe work.
 =======
 I have'nt make sure this works on Windows. 
 On Linux or Mac, maybe work. 
 >>>>>>> 086482d073131499a238964f75bee5ccc4453cf5
+=======
+I have'nt make sure this works on Windows. On Linux or Mac, maybe work.
+>>>>>>> 7688e79254ee386a76d3ad7b39393c0a335a8f92
 
 If you want to contact me, plz send e-mail to keno.rheo2525[at]gmail.com
 
