@@ -3,7 +3,8 @@ This is the code used in my [graduate thesis](http://rheology.jp/nagoya/employee
 
 Watch the movie on [YouTube](https://www.youtube.com/watch?v=f9K-1ByvgVI)
 
-I have'nt make sure this works on Windows. On Linux or Mac, maybe work.
+I have'nt make sure this works on Windows. 
+On Linux or Mac, maybe work.
 
 If you want to contact me, plz send e-mail to keno.rheo2525[at]gmail.com
 
@@ -42,7 +43,7 @@ If you want to contact me, plz send e-mail to keno.rheo2525[at]gmail.com
 
     After configure, do `make all`, `make check` as the log said.
 4. set Environmental variables `PETSC_DIR` and `PETSC_ARCH`
-   set `PETSC_DIR` and `PETSC_ARCH` in `~/.bashrc` or `~/.zshrc`
+5. set `PETSC_DIR` and `PETSC_ARCH` in `~/.bashrc` or `~/.zshrc`
 
 
 
@@ -112,7 +113,7 @@ Use `src/mk_fiber` and `fp_fiber3/init.c`
     DT 0.00001
     FINISH_TIME 0.2
     OUTPUT_INTERVAL 20
-    Init_place ./../mk_fiber/18f20-10_3600_60-60_2d.dat
+    Init_place ./../mk_fiber/98f42-10_3600_60-60_2d.dat # the file for initial coordinate 
     output_dir .    # where to output
     ks 1.0E+09      # spring constant
     kb 5.0E+08
@@ -121,3 +122,15 @@ Use `src/mk_fiber` and `fp_fiber3/init.c`
 3. ```
    ./execute.sh
    ```
+   
+## output
+
+- input_parameters        -> confirm the input parameters
+- output_couette.dat      -> check the flow profile 
+- particle*.vtu           -> you can see the animation with [ParaView](https://www.paraview.org/)
+- output_analysis.txt     -> some variables for analysis
+- output_unit.dat         -> direction vector of fibers 
+- output_FiberMonitor.dat -> check the how fiber is bending or stretching
+- output_center.dat       -> the gravity center of fibers 
+- output_wallstress.dat   -> the wall stress exerted by the fiber suspensions. Using the strain rate, you can calculate the viscosity.
+
