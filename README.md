@@ -3,17 +3,7 @@ This is the code used in my [graduate thesis](http://rheology.jp/nagoya/employee
 
 Watch the movie on [YouTube](https://www.youtube.com/watch?v=f9K-1ByvgVI)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-I have'nt make sure this works on Windows.
-On Linux or Mac, maybe work.
-=======
-I have'nt make sure this works on Windows. 
-On Linux or Mac, maybe work. 
->>>>>>> 086482d073131499a238964f75bee5ccc4453cf5
-=======
 I have'nt make sure this works on Windows. On Linux or Mac, maybe work.
->>>>>>> 7688e79254ee386a76d3ad7b39393c0a335a8f92
 
 If you want to contact me, plz send e-mail to keno.rheo2525[at]gmail.com
 
@@ -122,11 +112,7 @@ Use `src/mk_fiber` and `fp_fiber3/init.c`
     DT 0.00001
     FINISH_TIME 0.2
     OUTPUT_INTERVAL 20
-<<<<<<< HEAD
     Init_place ./../mk_fiber/98f42-10_3600_60-60_2d.dat # the file for initial coordinate
-=======
-    Init_place ./../mk_fiber/98f42-10_3600_60-60_2d.dat # the file for initial coordinate 
->>>>>>> 086482d073131499a238964f75bee5ccc4453cf5
     output_dir .    # where to output
     ks 1.0E+09      # spring constant
     kb 5.0E+08
@@ -135,7 +121,6 @@ Use `src/mk_fiber` and `fp_fiber3/init.c`
 3. ```
    ./execute.sh
    ```
-<<<<<<< HEAD
 
 ## output
 
@@ -146,17 +131,5 @@ Use `src/mk_fiber` and `fp_fiber3/init.c`
 - output_unit.dat         -> direction vector of fibers
 - output_FiberMonitor.dat -> check the how fiber is bending or stretching
 - output_center.dat       -> the gravity center of fibers
-=======
-   
-## output
-
-- input_parameters        -> confirm the input parameters
-- output_couette.dat      -> check the flow profile 
-- particle*.vtu           -> you can see the animation with [ParaView](https://www.paraview.org/)
-- output_analysis.txt     -> some variables for analysis
-- output_unit.dat         -> direction vector of fibers 
-- output_FiberMonitor.dat -> check the how fiber is bending or stretching
-- output_center.dat       -> the gravity center of fibers 
->>>>>>> 086482d073131499a238964f75bee5ccc4453cf5
 - output_wallstress.dat   -> the wall stress exerted by the fiber suspensions. Using the strain rate, you can calculate the viscosity.
 
