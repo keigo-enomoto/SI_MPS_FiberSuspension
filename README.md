@@ -69,17 +69,20 @@ Use `src/mk_fiber` and `fp_fiber3/init.c`
     ```sh
     # change here ==========
     xx_arr=( 1 )
-    yy_arr=( 60 ) # the number of particle in y axis
+    yy_arr=( 40 ) # the number of particle in y axis
     ap_arr=( 10 ) # aspect ratio of fiber
-    nf_arr=( 42 ) # number of fiber
+    nf_arr=( 5 ) # number of fiber
     ss_arr=( 98 ) # seed for initial coordinate
 
     # ========================
     ```
+    If you want to run it on your computer, the number of y-axis particles `yy_arr` should be less than 40 in terms of calculation time.
 
 3. ```
    ./mk_particle.sh
     ```
+    [ example ]
+    `y = 20`,`ap = 10`,`nf = 3` -> it takes about 3 minutes on my computer.
 
 ## calculate
 
@@ -107,20 +110,23 @@ Use `src/mk_fiber` and `fp_fiber3/init.c`
     Rho_s 1.0       # mass density of fiber
     Nu_f 10000      # viscosity of fluid
     Nu_s 10000      # viscosity of fiber
-    strain_rate 10
+    strain_rate 10  # 1.0 ~ 10 is recommended
     Gravity 0.0
     DT 0.00001
     FINISH_TIME 0.2
     OUTPUT_INTERVAL 20
-    Init_place ./../mk_fiber/98f42-10_3600_60-60_2d.dat # the file for initial coordinate
+    Init_place ./../mk_fiber/dat/98f42-10_3600_60-60_2d.dat # the file for initial coordinate
     output_dir .    # where to output
     ks 1.0E+09      # spring constant
     kb 5.0E+08
     VTU_flag 0     # 1 -> output vtu file, 0 -> don't output
    ```
+   - Be sure to check the path to the file in `Init_place`
+
 3. ```
    ./execute.sh
    ```
+   - If the calculation time is too long, check the `FINISH_TIME` or `ks`(spring constant).
 
 ## output
 

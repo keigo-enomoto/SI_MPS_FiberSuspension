@@ -27,7 +27,7 @@ CFLAGS += -O3 -std=c99 -funroll-loops
 
 OBJECTS = main.o CalculateFunction.o
 OBJECTS2 = read_data.o
-TARGETS = 2d
+TARGETS = 2d read
 
 all : $(TARGETS)
 
@@ -44,7 +44,6 @@ read : $(OBJECTS2)
 
 clean:
 	rm -f core *~ *.o $(TARGETS)
-	rm read
 print:
 	@echo CC=$(CC)
 	@echo CFLAGS=$(CFLAGS)

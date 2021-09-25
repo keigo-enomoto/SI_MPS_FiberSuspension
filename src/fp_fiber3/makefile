@@ -30,7 +30,7 @@ OBJECTS2 = main_i.o parameter.o CalculateFunction.o CalculatePressure.o petsc_so
 OBJECTS3 = main_t.o parameter.o CalculateFunction.o CalculatePressure.o petsc_solver.o sub_function.o CalculateSolid.o
 OBJECTS4 = init.o parameter.o CalculateFunction.o CalculatePressure.o petsc_solver.o sub_function.o CalculateSolid.o
 OBJECT_TEST = test_celllist.o
-TARGETS = mps
+TARGETS = mps init
 
 all : $(TARGETS)
 
@@ -57,7 +57,7 @@ mps_gprof : $(OBJECTS)
 # Don't forget -pg in .c.o command
 
 clean:
-	rm -f core *~ *.o $(TARGETS) init mps_i mps_t mps_omp
+	rm -f core *~ *.o $(TARGETS) mps_i mps_t mps_omp
 	# rm mps_i
 	# rm mps_t
 print:
