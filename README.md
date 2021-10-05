@@ -54,9 +54,9 @@ Use `src/mk_fiber` and `fp_fiber3/init.c`
 1. make
     ```
     cd src/mk_fiber
-    make 2d
+    make            # `2d` and `read` are made
     cd ../fp_fiber3
-    make init
+    make            # `mps` and `init` are made
     cd ../..
     ```
 
@@ -83,6 +83,8 @@ Use `src/mk_fiber` and `fp_fiber3/init.c`
     ```
     [ example ]
     `y = 20`,`ap = 10`,`nf = 3` -> it takes about 3 minutes on my computer.
+
+    If calculation is succeeded, the files of the initial cordinate are in `dat`. Please use these initial cordination files for the calculateion as below.
 
 ## calculate
 
@@ -121,7 +123,12 @@ Use `src/mk_fiber` and `fp_fiber3/init.c`
     kb 5.0E+08
     VTU_flag 0     # 1 -> output vtu file, 0 -> don't output
    ```
-   - Be sure to check the path to the file in `Init_place`
+   - Be sure to check the path to the file in `Init_place` like
+   ```sh
+   ls ./../mk_fiber/dat
+
+   ```
+   And check the list of the files including the information about the initial cordinates.
 
 3. ```
    ./execute.sh

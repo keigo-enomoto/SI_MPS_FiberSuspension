@@ -7,7 +7,7 @@ Gravity 0.0
 DT 0.00001
 FINISH_TIME 0.2
 OUTPUT_INTERVAL 20
-Init_place ./../mk_fiber/18f20-10_3600_60-60_2d.dat
+Init_place ./../mk_fiber/dat/18f20-10_3600_60-60_2d.dat
 output_dir .
 ks 1.0E+09
 kb 5.0E+08
