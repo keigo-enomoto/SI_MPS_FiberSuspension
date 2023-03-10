@@ -1,4 +1,7 @@
-# FiberSuspension
+# SI_MPS_FiberSuspension
+
+Semi-implicit Moving Particle Simulations for 2D sheared fiber suspensions.
+
 This code is used in my [graduate thesis](http://rheology.jp/nagoya/employees/keigo-enomoto/).
 
 Watch movies on [YouTube](https://www.youtube.com/watch?v=f9K-1ByvgVI)
