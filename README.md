@@ -1,7 +1,7 @@
 # FiberSuspension
-This is the code used in my [graduate thesis](http://rheology.jp/nagoya/employees/keigo-enomoto/).
+This code is used in my [graduate thesis](http://rheology.jp/nagoya/employees/keigo-enomoto/).
 
-Watch the movie on [YouTube](https://www.youtube.com/watch?v=f9K-1ByvgVI)
+Watch movies on [YouTube](https://www.youtube.com/watch?v=f9K-1ByvgVI)
 
 I have'nt make sure this works on Windows. On Linux or Mac, maybe work.
 
