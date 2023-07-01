@@ -19,7 +19,7 @@ If you want to contact me, plz send e-mail to keno.rheo2525[at]gmail.com
 
 ## Prepare PETSc
 
-1. Download zip file form HP
+1. Download zip file from HP
 2. move zip file your favorite place (Here, put zip file in `lib` directory )
    ```
     mkdir lib
