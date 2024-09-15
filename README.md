@@ -4,57 +4,54 @@ Semi-implicit Moving Particle Simulations for 2D sheared fiber suspensions.
 
 This code is used in my [graduate thesis](http://rheology.jp/nagoya/employees/keigo-enomoto/).
 
-Watch movies on [YouTube](https://www.youtube.com/watch?v=f9K-1ByvgVI)
+Watch simulation videos on [YouTube](https://www.youtube.com/watch?v=f9K-1ByvgVI).
 
-I have'nt make sure this works on Windows. On Linux or Mac, maybe work.
+I have not confirmed that this works on Windows. On Linux or Mac, it should work.
 
-If you want to contact me, plz send e-mail to keno.rheo2525[at]gmail.com
+If you'd like to contact me, please email keno.rheo2525[at]gmail.com.
 
-## What is needed
+## Requirements
 
-- gcc (if you want use OpenMP)
+- gcc (if you want to use OpenMP)
 - clang or gcc
 - [PETSc](https://www.mcs.anl.gov/petsc/index.html)
 
+## Setting up PETSc
 
-## Prepare PETSc
-
-1. Download zip file from HP
-2. move zip file your favorite place (Here, put zip file in `lib` directory )
+1. Download the PETSc zip file from the official site.
+2. Move the zip file to your preferred location (in this example, it's placed in the `lib` directory):
    ```
     mkdir lib
     mv path/to/file/petsc-3.xx.x.tar.gz lib
     cd lib
     tar xzf petsc-3.xx.x.tar.gz
    ```
-3. configure (change the options according to your environment. refer to [Instllation page](https://www.mcs.anl.gov/petsc/documentation/installation.html))
+3. Configure PETSc (adjust options according to your environment, refer to the [installation guide](https://www.mcs.anl.gov/petsc/documentation/installation.html)):
 
-   **example**
-   - don't use OpenMP
-   ```
-    export PETSC_DIR=/path/to/lib/petsc-3.xx.x
+**Example configurations:**
+- Without OpenMP:
+  ```
+  export PETSC_DIR=/path/to/lib/petsc-3.xx.x
 
-    ./configure --with-cc=gcc --with-cxx=g++ --with-fc=gfortran -- download-fblaslapack --with-mpi=0 PETSC_DIR=$PETSC_DIR
-   ```
-   - use OpenMP
-    ```
-    export PETSC_DIR=/path/to/lib/petsc-3.xx.x
+  ./configure --with-cc=gcc --with-cxx=g++ --with-fc=gfortran --download-fblaslapack --with-mpi=0 PETSC_DIR=$PETSC_DIR
+  ```
+- With OpenMP:
+  ```
+  export PETSC_DIR=/path/to/lib/petsc-3.xx.x
 
-    ./configure --with-cc=gcc --with-cxx=g++ --with-fc=gfortran -- download-fblaslapack --with-openmp --with-mpi=0 PETSC_DIR=$PETSC_DIR
-    ```
+  ./configure --with-cc=gcc --with-cxx=g++ --with-fc=gfortran --download-fblaslapack --with-openmp --with-mpi=0 PETSC_DIR=$PETSC_DIR
+  ```
 
-    After configure, do `make all`, `make check` as the log said.
-4. set Environmental variables `PETSC_DIR` and `PETSC_ARCH`
-5. set `PETSC_DIR` and `PETSC_ARCH` in `~/.bashrc` or `~/.zshrc`
+After configuring, run `make all` and `make check` as instructed in the log.
 
+4. Set the environment variables `PETSC_DIR` and `PETSC_ARCH`.
+5. Add `PETSC_DIR` and `PETSC_ARCH` to your `~/.bashrc` or `~/.zshrc` for persistence.
 
+## Creating Initial Coordinates
 
+Use `src/mk_fiber` and `fp_fiber3/init.c`.
 
-## make initial coordinate
-
-Use `src/mk_fiber` and `fp_fiber3/init.c`
-
-1. make
+1. Compile the programs:
     ```
     cd src/mk_fiber
     make            # `2d` and `read` are made
@@ -63,11 +60,11 @@ Use `src/mk_fiber` and `fp_fiber3/init.c`
     cd ../..
     ```
 
-2. set parameter
+2. Set the parameters:
    ```
    cd output/mk_fiber
    ```
-    and edit `mk_particle.sh`
+    Then, edit the `mk_particle.sh` file:
 
     ```sh
     # change here ==========
@@ -79,37 +76,38 @@ Use `src/mk_fiber` and `fp_fiber3/init.c`
 
     # ========================
     ```
-    If you want to run it on your computer, the number of y-axis particles `yy_arr` should be less than 40 in terms of calculation time.
+    Note : For paractical computation timtes, set the number of y-axis particles `yy_arr` to less than 40.
 
-3. ```
+3. Run the script to generate the particle coordinates:
+   ```
    ./mk_particle.sh
     ```
     [ example ]
-    `y = 20`,`ap = 10`,`nf = 3` -> it takes about 3 minutes on my computer.
+    For `y = 20`,`ap = 10`,`nf = 3`, the script takes about 3 minutes on my computer.
 
-    If calculation is succeeded, the files of the initial cordinate are in `dat`. Please use these initial cordination files for the calculateion as below.
+   if successful, the inital coordinate files will be placed in the `dat` directory. Use these files for the calculation as shown below.
 
-## calculate
+## Running the Simulation
 
-1. make (don't use OpenMP)
+1. Compile the simulation code (without OpenMP):
    ```
     cd src/fp_fiber3
     make
     cd ..
    ```
-   make (use OpenMP)
+   To compile with OpenMP:
    ```
     cd src/fp_fiber3
     ./omp.sh
     cd ..
    ```
-2. edit parameter
+2. Set simulation parameters:
    ```
    cd output
    cp -r example test1
    cd test1
    ```
-   and edit `input_cluster.txt`
+   Edit the `input_cluster.txt` file:
    ```txt
     DIM 2           # dimension(Now, only 2 is available)
     Rho_s 1.0       # mass density of fiber
@@ -126,19 +124,20 @@ Use `src/mk_fiber` and `fp_fiber3/init.c`
     kb 5.0E+08
     VTU_flag 0     # 1 -> output vtu file, 0 -> don't output
    ```
-   - Be sure to check the path to the file in `Init_place` like
+   Ensure the path to the initial coordinates file in `Init_place` is correct by running:
    ```sh
    ls ./../mk_fiber/dat
 
    ```
-   And check the list of the files including the information about the initial cordinates.
+   This will list the files, allowing ou to verify the initial coordinate file.
 
-3. ```
+3. Run the simulation:
+   ```
    ./execute.sh
    ```
-   - If the calculation time is too long, check the `FINISH_TIME` or `ks`(spring constant).
+   If the calculation takes too long, adjust the `FINISH_TIME` or `ks`(spring constant) to reduce the duration.
 
-## output
+## Output Files
 
 - input_parameters        -> confirm the input parameters
 - output_couette.dat      -> check the flow profile
