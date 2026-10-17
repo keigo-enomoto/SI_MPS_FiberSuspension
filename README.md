@@ -10,6 +10,14 @@ Simulation videos are available on [YouTube](https://www.youtube.com/watch?v=f9K
 
 The code has been tested on Linux and macOS. It has not been tested on Windows.
 
+> **Note:** The periodic rotation of fibers is not implemented correctly in this code. This issue has been fixed in the improved method presented in the paper below.
+
+## Reference
+
+The following paper presents a revised version of this method that fixes the fiber rotation problem described above:
+
+K. Enomoto, T. Ishida, Y. Doi, T. Uneyama, and Y. Masubuchi, "Extension of moving particle simulation by introducing rotational degrees of freedom for dilute fiber suspensions," *International Journal for Numerical Methods in Fluids*, **96**, 125–137 (2024). [doi:10.1002/fld.5235](https://onlinelibrary.wiley.com/doi/10.1002/fld.5235)
+
 ## Requirements
 
 - A C compiler (clang or gcc; gcc is required for OpenMP)
