@@ -76,14 +76,6 @@ print:
 # LDLIBS=-lpetsc -lm
 # CFLAGS += -O3
 
-# =====[cluster]=====
-# CC=gcc
-# CFLAGS=-fPIC -Wall -Wwrite-strings -Wno-strict-aliasing -Wno-unknown-pragmas -fstack-protector -fvisibility=hidden
-# INCLUDE_FLAGS=-I/nfs/maxhome00/keno/lib/petsc-3.13.4/arch-linux2-c-debug/include -I/nfs/maxhome00/keno/lib/petsc-3.13.4/include
-# LDFLAGS=-L/nfs/maxhome00/keno/lib/petsc-3.13.4/arch-linux2-c-debug/lib -Wl,-rpath,/nfs/maxhome00/keno/lib/petsc-3.13.4/arch-linux2-c-debug/lib
-# LDLIBS=-lpetsc -lm
-# CFLAGS += -O3 -std=c99
-
 
 # -------[make print]--------
 # INCLUDE_FLAGS -> (CPPFLAGS)
