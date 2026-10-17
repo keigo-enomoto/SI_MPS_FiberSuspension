@@ -1,3 +1,5 @@
+![SI-MPS-FiberSuspension](./image/SI-MPS_B4.png)
+
 # SI_MPS_FiberSuspension
 
 2D simulation of fiber suspensions under shear flow using a Moving Particle Semi-implicit (MPS) method.
